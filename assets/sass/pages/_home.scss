@@ -1,0 +1,37 @@
+body {
+    background-image: url("../../img/fond.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+h1 {
+    text-align: center;
+    color: #18AD58;
+}
+.previous {
+    grid-area: previous;
+    background-color: #2F91FA;
+    border: none;
+    border-radius: 20%;
+    padding: 1em;
+}
+.next {
+    grid-area: next;
+    background-color: #FA5548;
+    border: none;
+    border-radius: 20%;
+    padding: 1em;
+}
+.carousel {
+    grid-area: carousel;
+}
+section {
+    display: grid;
+    grid-template-columns: repeat(5), 1fr;
+    grid-template-rows: repeat(3) 1fr;
+    grid-template-areas: 
+    ". . carousel . ."
+    ". previous carousel next ."
+    ". . carousel . ."
+    ;
+}
