@@ -1,148 +1,129 @@
 body {
-  background-image: url("../../img/fond.png");
+  background-image: url("../../img/fond.webp");
   background-repeat: no-repeat;
   background-size: cover;
-  position: absolute;
 }
 
 h1 {
-  color: sandybrown;
   text-align: center;
+  color: #18AD58;
 }
 
-.header {
-  display: -ms-grid;
-  display: grid;
+.previous {
+  grid-area: previous;
+  background-color: #2F91FA;
+  border: none;
+  border-radius: 20%;
+  padding: 1em;
+  margin-left: 5rem;
 }
 
-.header .player {
-  grid-area: player;
+.next {
+  grid-area: next;
+  background-color: #FA5548;
+  border: none;
+  border-radius: 20%;
+  padding: 1em;
+  margin-right: 5rem;
 }
 
-.header .player h2, .header .player aside {
-  color: cyan;
+.carousel {
+  grid-area: carousel;
 }
 
-.header .no-player {
-  grid-area: monster;
-  color: darkblue;
-}
-
-.header progress {
-  -webkit-appearance: none;
-}
-
-.button, .buttons {
-  text-align: center;
-}
-
-.start {
-  background-color: greenyellow;
-}
-
-.attack {
-  background-color: red;
-  color: white;
-}
-
-.specialAttack {
-  background-color: orange;
-}
-
-.heal {
-  background-color: greenyellow;
-}
-
-.giveUp {
-  background-color: grey;
-  color: white;
-}
-
-ul {
-  padding: 0;
-  background-color: honeydew;
-}
-
-ul li {
-  text-decoration: none;
-  list-style: none;
-}
-
-ul .blue {
-  color: darkblue;
-  background-color: deepskyblue;
-}
-
-ul .red {
-  color: red;
-  background-color: pink;
+.carousel img {
+  border-radius: 5%;
 }
 
 @media (max-width: 480px) {
-  * {
-    text-align: center;
-    font-size: 1rem;
+  section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: ()[3], 1fr;
+        grid-template-columns: repeat(3), 1fr;
+    -ms-grid-rows: ()[3] 1fr;
+        grid-template-rows: repeat(3) 1fr;
+        grid-template-areas: ". carousel . " "previous carousel next" ". carousel .";
   }
-  .header {
-    -ms-grid-columns: 1fr 0.25fr 1fr;
-        grid-template-columns: 1fr 0.25fr 1fr;
-    -ms-grid-rows: 1fr 0.25fr;
-        grid-template-rows: 1fr 0.25fr;
-        grid-template-areas: "player . monster" ". . .";
+  section .previous {
+    margin-left: 2rem;
   }
-  .header .player h2, .header .player aside {
-    color: cyan;
+  section .next {
+    margin-right: 2rem;
   }
-  .header .no-player h2, .header .no-player aside {
-    color: cyan;
+  section .previous, section .next {
+    font-size: 0.5rem;
+  }
+  section .carousel {
+    margin: auto;
+    width: 100%;
+    padding: 0;
+  }
+  section .carousel img {
+    width: 100%;
   }
 }
 
 @media (min-width: 481px) {
-  * {
-    font-size: 1.25rem;
-    text-align: center;
+  section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: ()[3], 1fr;
+        grid-template-columns: repeat(3), 1fr;
+    -ms-grid-rows: ()[3] 1fr;
+        grid-template-rows: repeat(3) 1fr;
+        grid-template-areas: ". carousel . " "previous carousel next" ". carousel .";
   }
-  .header {
-    -ms-grid-columns: 1fr 0.25fr 1fr;
-        grid-template-columns: 1fr 0.25fr 1fr;
-    -ms-grid-rows: 1fr 0.25fr;
-        grid-template-rows: 1fr 0.25fr;
-        grid-template-areas: "player . monster" ". . .";
+  section .previous, section .next {
+    font-size: 0.65rem;
   }
-  .header .player h2, .header .player aside {
-    color: cyan;
+  section .carousel {
+    margin: auto;
+    width: 95%;
+    padding: 0;
   }
-  .header .no-player h2, .header .no-player aside {
-    color: cyan;
+  section .carousel img {
+    width: 100%;
   }
 }
 
 @media (min-width: 769px) {
-  * {
-    font-size: 1.5rem;
-    text-align: center;
+  section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: ()[3], 1fr;
+        grid-template-columns: repeat(3), 1fr;
+    -ms-grid-rows: ()[3] 1fr;
+        grid-template-rows: repeat(3) 1fr;
+        grid-template-areas: ". carousel . " "previous carousel next" ". carousel .";
   }
-  .header {
-    -ms-grid-columns: 1fr 0.5fr 1fr;
-        grid-template-columns: 1fr 0.5fr 1fr;
-    -ms-grid-rows: 1fr 0.5fr;
-        grid-template-rows: 1fr 0.5fr;
-        grid-template-areas: "player . monster" ". . .";
+  section .carousel {
+    margin: auto;
+    width: 90%;
+    padding: 0;
+  }
+  section .carousel img {
+    width: 100%;
   }
 }
 
 @media (min-width: 1280px) {
-  * {
-    font-size: 1.75rem;
-    text-align: center;
+  section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: ()[5], 1fr;
+        grid-template-columns: repeat(5), 1fr;
+    -ms-grid-rows: ()[5] 1fr;
+        grid-template-rows: repeat(5) 1fr;
+        grid-template-areas: ". . carousel . ." ". previous carousel next ." ". . carousel . .";
   }
-  .header {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: "player . monster" ". . .";
+  section .carousel {
+    margin: auto;
+    width: 95%;
+    padding: 0;
+  }
+  section .carousel img {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */
