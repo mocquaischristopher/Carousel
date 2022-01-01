@@ -1,144 +1,121 @@
 body {
-    background-image: url("../../img/fond.png");
+    background-image: url("../../img/fond.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    position: absolute;
+    
 }
 h1 {
-    color: $colour-title;
     text-align: center;
+    color: $colour-green;
 }
-.header {
-    display: grid;
-    & .player {
-        grid-area: player;
-        & h2, aside {
-            color: $colour-player;
-        }
-    }
-    & .no-player {
-        grid-area: monster;
-        color: $colour-monster;
-    }
-    & progress {
-        -webkit-appearance: none;
-    }
+.previous {
+    @include button(previous, $colour-blue);
+    margin-left: 5rem;
 }
-.button, .buttons {
-    text-align: center;
+.next {
+    @include button(next, $colour-red);
+    margin-right: 5rem;
 }
-.start{
-    background-color: $colour-button;
-}
-.attack{
-    background-color: red;
-    color: white;
-}
-.specialAttack {
-    background-color: orange;
-
-}
-.heal {
-    background-color: $colour-button;
-
-}
-.giveUp {
-    background-color: grey;
-    color: white;
-}
-ul {
-    padding: 0;
-    background-color: honeydew;
-    & li {
-        text-decoration: none;
-        list-style: none;
-    }
-    & .blue {
-        color: darkblue;
-        background-color: deepskyblue;
-    }
-    & .red {
-        color: red;
-        background-color: pink;
+.carousel {
+    grid-area: carousel;
+    & img{
+        border-radius: 5%;
     }
 }
 
 @include for-phone-portrait {
-    * {
-        text-align: center;
-        font-size: 1rem;
-    }
-    .header {
-        grid-template-columns: 1fr 0.25fr 1fr;
-        grid-template-rows: 1fr 0.25fr;
+    section {
+        display: grid;
+        grid-template-columns: repeat(3), 1fr;
+        grid-template-rows: repeat(3) 1fr;
         grid-template-areas: 
-        "player . monster"
-        ". . ."
+        ". carousel . "
+        "previous carousel next"
+        ". carousel ."
         ;
-        & .player {
-            & h2, aside {
-                color: $colour-player;
-            }
+        & .previous {
+            margin-left: 2rem;
         }
-        & .no-player {
-            & h2, aside {
-                color: $colour-player;
+        & .next {
+            margin-right: 2rem;
+        }
+        & .previous, & .next {
+            font-size: 0.5rem;
+        }
+        & .carousel {
+            margin: auto;
+            width: 100%;
+            padding: 0;
+            & img {
+                width: 100%;
             }
         }
     }
-}
 
+}
 @include for-phone-paysage-and-tablet-portrait {
-    * {
-        font-size: 1.25rem;
-        text-align: center;
-    }
-    .header {
-        grid-template-columns: 1fr 0.25fr 1fr;
-        grid-template-rows: 1fr 0.25fr;
+    section {
+        display: grid;
+        grid-template-columns: repeat(3), 1fr;
+        grid-template-rows: repeat(3) 1fr;
         grid-template-areas: 
-        "player . monster"
-        ". . ."
+        ". carousel . "
+        "previous carousel next"
+        ". carousel ."
         ;
-        & .player {
-            & h2, aside {
-                color: $colour-player;
-            }
+        & .previous, & .next{
+            font-size: 0.65rem;
         }
-        & .no-player {
-            & h2, aside {
-                color: $colour-player;
+        & .carousel {
+            margin: auto;
+            width: 95%;
+            padding: 0;
+            & img{
+                width: 100%;
             }
         }
     }
+
 }
 
 @include for-tablet-portrait {
-    * {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-    .header {
-        grid-template-columns: 1fr 0.5fr 1fr;
-        grid-template-rows: 1fr 0.5fr;
+    section {
+        display: grid;
+        grid-template-columns: repeat(3), 1fr;
+        grid-template-rows: repeat(3) 1fr;
         grid-template-areas: 
-        "player . monster"
-        ". . ."
+        ". carousel . "
+        "previous carousel next"
+        ". carousel ."
         ;
+        & .carousel {
+            margin: auto;
+            width: 90%;
+            padding: 0;
+            & img{
+                width: 100%;
+            }
+        }
     }
-}
 
+}
 @include for-desktop {
-    * {
-        font-size: 1.75rem;
-        text-align: center;
-    }
-    .header {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+    section {
+        display: grid;
+        grid-template-columns: repeat(5), 1fr;
+        grid-template-rows: repeat(5) 1fr;
         grid-template-areas: 
-        "player . monster"
-        ". . ."
+        ". . carousel . ."
+        ". previous carousel next ."
+        ". . carousel . ."
         ;
+        & .carousel {
+            margin: auto;
+            width: 95%;
+            padding: 0;
+            & img{
+                width: 100%;
+            }
+        }
     }
 }
