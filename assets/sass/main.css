@@ -16,6 +16,7 @@ h1 {
   border-radius: 20%;
   padding: 1em;
   margin-left: 5rem;
+  cursor: pointer;
 }
 
 .next {
@@ -25,6 +26,7 @@ h1 {
   border-radius: 20%;
   padding: 1em;
   margin-right: 5rem;
+  cursor: pointer;
 }
 
 .carousel {
@@ -97,6 +99,9 @@ h1 {
         grid-template-rows: repeat(3) 1fr;
         grid-template-areas: ". carousel . " "previous carousel next" ". carousel .";
   }
+  section .previous, section .next {
+    font-size: 0.80rem;
+  }
   section .carousel {
     margin: auto;
     width: 90%;
@@ -116,6 +121,9 @@ h1 {
     -ms-grid-rows: ()[5] 1fr;
         grid-template-rows: repeat(5) 1fr;
         grid-template-areas: ". . carousel . ." ". previous carousel next ." ". . carousel . .";
+  }
+  section .previous, section .next {
+    font-size: 1rem;
   }
   section .carousel {
     margin: auto;

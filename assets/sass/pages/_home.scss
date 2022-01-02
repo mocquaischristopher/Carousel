@@ -11,10 +11,12 @@ h1 {
 .previous {
     @include button(previous, $colour-blue);
     margin-left: 5rem;
+    cursor: pointer;
 }
 .next {
     @include button(next, $colour-red);
     margin-right: 5rem;
+    cursor: pointer;
 }
 .carousel {
     grid-area: carousel;
@@ -88,6 +90,9 @@ h1 {
         "previous carousel next"
         ". carousel ."
         ;
+        & .previous, & .next {
+            font-size: 0.80rem;
+        }
         & .carousel {
             margin: auto;
             width: 90%;
@@ -109,6 +114,9 @@ h1 {
         ". previous carousel next ."
         ". . carousel . ."
         ;
+        & .previous, & .next {
+            font-size: 1rem;
+        }
         & .carousel {
             margin: auto;
             width: 95%;
